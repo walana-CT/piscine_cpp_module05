@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 09:27:37 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/06 10:05:28 by rficht           ###   ########.fr       */
+/*   Updated: 2024/01/20 17:10:56 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor)
 {
 	executor.execForm(*this);
 	if (this->getIsSigned() == false)
-		throw (GradeTooLowException());
+		throw (UnsignedExeption());
 	if (this->getGradeExec() >=  executor.getGrade())
 	{
 		const char *char_targ = this->_target.c_str();

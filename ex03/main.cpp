@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 13:36:05 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/10 09:54:25 by rficht           ###   ########.fr       */
+/*   Updated: 2024/01/20 17:14:01 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ int main(void)
 	AForm* form3;
 
 	Intern tim;
-	
+
+	std::cout << std::endl << "Tim doing it's job" << std::endl << std::endl;	
+
 	try
 	{	form1 = tim.makeForm("robotomy request", "intern 152");	}
 	catch (Intern::UnexistingFormException & e)
@@ -54,6 +56,7 @@ int main(void)
 	catch (Intern::UnexistingFormException & e)
 	{	std::cerr << "Error: " << e.what() << std::endl;	}
 	
+	std::cout << std::endl << "Testing if tim made good forms" << std::endl << std::endl;	
 
 	form1->beSigned(micheline);
 	form1->execute(claudine);

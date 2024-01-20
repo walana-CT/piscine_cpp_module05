@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 09:35:37 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/06 09:26:07 by rficht           ###   ########.fr       */
+/*   Updated: 2024/01/20 17:10:48 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void PresidentialPardonForm::execute(const Bureaucrat& executor)
 {
 	executor.execForm(*this);
 	if (this->getIsSigned() == false)
-		throw (GradeTooLowException());
+		throw (UnsignedExeption());
 	if (this->getGradeExec() >=  executor.getGrade())
 		std::cout << this->_target << " is forgived by his highness president Zaphod Beeblebrox" << std::endl;
 	else

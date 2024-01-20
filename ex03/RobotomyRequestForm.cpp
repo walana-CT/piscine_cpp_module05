@@ -6,7 +6,7 @@
 /*   By: rficht <rficht@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 10:21:57 by rficht            #+#    #+#             */
-/*   Updated: 2024/01/06 10:31:18 by rficht           ###   ########.fr       */
+/*   Updated: 2024/01/20 17:11:26 by rficht           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), _target("default")
 {	std::cout << "RobotomyRequestForm default constructor called" << std::endl;	}
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("RobotomyRequestForm", 145, 137), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {	std::cout << "RobotomyRequestForm constructor called" << std::endl;	}
 
 RobotomyRequestForm::~RobotomyRequestForm()
@@ -43,7 +43,7 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor)
 {
 	executor.execForm(*this);
 	if (this->getIsSigned() == false)
-		throw (GradeTooLowException());
+		throw (UnsignedExeption());
 	if (this->getGradeExec() >=  executor.getGrade())
 	{
 		std::cout << "zzzzzzzz crrshshsh bwwwwwooshhhh bzbzbzbbwzzzzzzzz cricrich crouch shwiiiiii" << std::endl;
@@ -55,7 +55,6 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor)
 		else
 			std::cout << this->_target << " robotomy has failed" << std::endl;			
 	}
-
 	else
 		throw (GradeTooLowException());
 }
